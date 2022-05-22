@@ -10,6 +10,11 @@
 .remove-content__info {
     display: flex;
     padding-bottom: 22px;
+
+    @media (max-width: 680px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .remove-content__img {
@@ -19,6 +24,12 @@
     margin-right: 50px;
     margin-left: 50px;
     margin-top: 8px;
+}
+
+.remove-content__img-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .remove-content__info-date {

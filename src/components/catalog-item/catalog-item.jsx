@@ -23,6 +23,15 @@ function CatalogItem({...props}) {
     dispatch(dataObject(temp));
   };
 
+  const onClickMore = (evt) => {
+    let target = evt.target;
+    let objArticul = target.getAttribute(`data-key`);
+    let temp = {
+      id: objArticul
+    };
+    dispatch(dataObject(temp));
+  };
+
   return (
     <>
       <li className="catalog__item">
@@ -38,7 +47,7 @@ function CatalogItem({...props}) {
           <p className="catalog__item-price">{renderPrice(item.price)} ₽</p>
         </div>
         <div className="catalog__item-btns">
-          <a href="/product" className="catalog__item-btn-more">Подробнее</a>
+          <a href="/product" className="catalog__item-btn-more" data-key={item.articul} onClick={onClickMore} openModal={onModalActive}>Подробнее</a>
           <button className="catalog__item-btn-buy" type="button" data-key={item.articul} onClick={onClickBuy}>Купить</button>
         </div>
       </li>

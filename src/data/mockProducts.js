@@ -8,6 +8,7 @@ export default [
     "reviews": 15,
     "size": `50`,
     "price": 17500,
+    "desc": `Костюм деловой. В комплекте жакет и юбка. Костюм выполнен из экозамши, без подклада. Приталенный крой, юбка-карандаш на средней посадке со шлицей. Пуговицы декорированы тканью в цвет материала. Костюм с юбкой женский это универсальный вариативный наряд- офисный костюм, костюм с юбкой женский вечерний.`,
   },
   {
     "articul": `TK129049`,
@@ -18,6 +19,7 @@ export default [
     "reviews": 9,
     "size": `50`,
     "price": 29500,
+    "desc": `Описание товара`,
   },
   {
     "articul": `RO111111`,
@@ -27,7 +29,8 @@ export default [
     "rating": 5,
     "reviews": 21,
     "size": `44`,
-    "price": 6800
+    "price": 6800,
+    "desc": `Описание товара`,
   },
   {
     "articul": `TK436457`,
@@ -37,7 +40,8 @@ export default [
     "rating": 5,
     "reviews": 15,
     "size": `46`,
-    "price": 30000
+    "price": 30000,
+    "desc": `Описание товара`,
   },
   {
     "articul": `DI192138`,
@@ -47,7 +51,8 @@ export default [
     "rating": 5,
     "reviews": 5,
     "size": `50`,
-    "price": 3500
+    "price": 3500,
+    "desc": `Описание товара`,
   },
   {
     "articul": `SO934345`,
@@ -57,7 +62,8 @@ export default [
     "rating": 5,
     "reviews": 17,
     "size": `46`,
-    "price": 15300
+    "price": 15300,
+    "desc": `Описание товара`,
   },
   {
     "articul": `DI082347`,
@@ -67,7 +73,8 @@ export default [
     "rating": 5,
     "reviews": 5,
     "size": `44`,
-    "price": 2200
+    "price": 2200,
+    "desc": `Описание товара`,
   },
   {
     "articul": `SO135646`,
@@ -77,7 +84,8 @@ export default [
     "rating": 5,
     "reviews": 27,
     "size": `44`,
-    "price": 30000
+    "price": 30000,
+    "desc": `Описание товара`,
   },
   {
     "articul": `VO154751`,
@@ -87,7 +95,8 @@ export default [
     "rating": 5,
     "reviews": 3,
     "size": `50`,
-    "price": 1700
+    "price": 1700,
+    "desc": `Описание товара`,
   },
   {
     "articul": `TK244556`,
@@ -97,7 +106,8 @@ export default [
     "rating": 5,
     "reviews": 20,
     "size": `44`,
-    "price": 23000
+    "price": 23000,
+    "desc": `Описание товара`,
   },
   {
     "articul": `TK134663`,
@@ -107,7 +117,8 @@ export default [
     "rating": 5,
     "reviews": 19,
     "size": `44`,
-    "price": 18700
+    "price": 18700,
+    "desc": `Описание товара`,
   },
   {
     "articul": `SO123212`,
@@ -117,7 +128,8 @@ export default [
     "rating": 5,
     "reviews": 30,
     "size": `50`,
-    "price": 35000
+    "price": 35000,
+    "desc": `Описание товара`,
   },
   {
     "articul": `SO123234`,
@@ -127,7 +139,8 @@ export default [
     "rating": 5,
     "reviews": 28,
     "size": `46`,
-    "price": 14900
+    "price": 14900,
+    "desc": `Описание товара`,
   },
   {
     "articul": `VO519510`,
@@ -137,7 +150,8 @@ export default [
     "rating": 5,
     "reviews": 7,
     "size": `46`,
-    "price": 7600
+    "price": 7600,
+    "desc": `Описание товара`,
   },
   {
     "articul": `VO457369`,
@@ -147,7 +161,8 @@ export default [
     "rating": 5,
     "reviews": 19,
     "size": `46`,
-    "price": 6500
+    "price": 6500,
+    "desc": `Описание товара`,
   },
   {
     "articul": `FB625903`,
@@ -157,7 +172,8 @@ export default [
     "rating": 5,
     "reviews": 26,
     "size": `50`,
-    "price": 12000
+    "price": 12000,
+    "desc": `Описание товара`,
   },
   {
     "articul": `FB576948`,
@@ -167,7 +183,8 @@ export default [
     "rating": 5,
     "reviews": 31,
     "size": `50`,
-    "price": 9900
+    "price": 9900,
+    "desc": `Описание товара`,
   },
   {
     "articul": `LU012032`,
@@ -177,7 +194,8 @@ export default [
     "rating": 5,
     "reviews": 28,
     "size": `52`,
-    "price": 8900
+    "price": 8900,
+    "desc": `Описание товара`,
   },
   {
     "articul": `LU546853`,
@@ -187,7 +205,8 @@ export default [
     "rating": 5,
     "reviews": 34,
     "size": `52`,
-    "price": 10500
+    "price": 10500,
+    "desc": `Описание товара`,
   },
   {
     "articul": `LU458283`,
@@ -197,7 +216,8 @@ export default [
     "rating": 5,
     "reviews": 9,
     "size": `46`,
-    "price": 13300
+    "price": 13300,
+    "desc": `Описание товара`,
   },
   {
     "articul": `RO324341`,
@@ -207,7 +227,8 @@ export default [
     "rating": 5,
     "reviews": 37,
     "size": `44`,
-    "price": 4800
+    "price": 4800,
+    "desc": `Описание товара`,
   },
   {
     "articul": `RO214235`,
@@ -217,7 +238,8 @@ export default [
     "rating": 5,
     "reviews": 5,
     "size": `44`,
-    "price": 1900
+    "price": 1900,
+    "desc": `Описание товара`,
   },
   {
     "articul": `DI132414`,
@@ -227,7 +249,8 @@ export default [
     "rating": 5,
     "reviews": 23,
     "size": `44`,
-    "price": 2500
+    "price": 2500,
+    "desc": `Описание товара`,
   },
   {
     "articul": `DI934754`,
@@ -237,7 +260,8 @@ export default [
     "rating": 5,
     "reviews": 3,
     "size": `44`,
-    "price": 3800
+    "price": 3800,
+    "desc": `Описание товара`,
   },
   {
     "articul": `DI034292`,
@@ -247,7 +271,8 @@ export default [
     "rating": 5,
     "reviews": 10,
     "size": `44`,
-    "price": 4100
+    "price": 4100,
+    "desc": `Описание товара`,
   },
   {
     "articul": `MI193214`,
@@ -257,7 +282,8 @@ export default [
     "rating": 5,
     "reviews": 14,
     "size": `44`,
-    "price": 2700
+    "price": 2700,
+    "desc": `Описание товара`,
   },
   {
     "articul": `VO043244`,
@@ -267,6 +293,7 @@ export default [
     "rating": 5,
     "reviews": 29,
     "size": `44`,
-    "price": 6700
+    "price": 6700,
+    "desc": `Описание товара`,
   },
 ];

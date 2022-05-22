@@ -9,7 +9,7 @@
     align-items: flex-start;
     padding: 20px 5.8% 9px 4%;
 
-    @media (max-width: 385px) {
+    @media (max-width: 460px) {
         flex-direction: column;
         align-items: center;
     }
@@ -33,11 +33,13 @@
     flex-wrap: wrap;
     margin-top: 5px;
 
-    @media (max-width: 650px) {
-        width: 65%
+    @media (max-width: 680px) {
+        width: 82%
     }
-    @media (max-width: 385px) {
+    @media (max-width: 460px) {
         width: 100%;
+        flex-direction: column;
+        align-items: center;
     }
 }
 

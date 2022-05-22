@@ -42,12 +42,12 @@ function Filters() {
 
   if (tempMin > tempMax) {
     setMaxPrice(tempMin);
-    setMinPrice(tempMax);
+    setMinPrice(tempMin);
   }
 
   if (tempMax < tempMin) {
     setMinPrice(tempMax);
-    setMaxPrice(tempMin);
+    setMaxPrice(tempMax);
   }
 
   type = {
@@ -135,7 +135,6 @@ function Filters() {
     dispatch(changeFilter(temp));
   };
 
-
   return (
     <>
       <h2 className="filters__title">Фильтр</h2>
@@ -165,7 +164,7 @@ function Filters() {
                 value={maxPrice}
                 onValueChange={(values) => {
                   const {value} = values;
-                  setMinPrice(value);
+                  setMaxPrice(value);
                 }}
               />
             </label>

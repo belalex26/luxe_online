@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 
 import {selectObject} from "../../store/objectSlise";
-import {selectGuitars} from "../../store/giutarsSlise";
+import {selectProducts} from "../../store/productsSlise";
 import {addToCart} from "../../store/cardSlise";
 
 import {renderPrice} from "../../utils";
@@ -12,14 +12,14 @@ import {renderPrice} from "../../utils";
 const AddContent = ({...props}) => {
   const {onModalAddActive, successModal, onSuccessModal} = props;
 
-  const guitarId = useSelector(selectObject);
-  const guitars = useSelector(selectGuitars);
+  const productId = useSelector(selectObject);
+  const products = useSelector(selectProducts);
   const dispatch = useDispatch();
-  let itemGuitar = guitars.find((index) => index.articul === guitarId.id);
+  let itemProduct = products.find((index) => index.articul === productId.id);
 
   useEffect(() => {
     renderAddContent();
-  }, [itemGuitar]);
+  }, [itemProduct]);
 
   const onClickAddToBasket = (evt) => {
     let target = evt.target;
@@ -30,19 +30,21 @@ const AddContent = ({...props}) => {
 
   // eslint-disable-next-line consistent-return
   const renderAddContent = () => {
-    if (itemGuitar !== undefined) {
+    if (itemProduct !== undefined) {
       if (!successModal) {
         return (
           <>
             <p className="add-content__title">Добавить товар в корзину</p>
             <div className="add-content__info">
-              <img className="add-content__img" src={itemGuitar.image} alt="фото товара" />
-              <div className="add-content__info-date">
-                <p className="add-content__info-name">{itemGuitar.name}</p>
-                <p className="add-content__info-article">Артикул: {itemGuitar.articul} </p>
-                <p className="add-content__info-price">Цена: {renderPrice(itemGuitar.price)} ₽</p>
+              <div className="add-content__img">
+                <img className="add-content__img-img" src={itemProduct.image} alt="фото товара" />
               </div>
-              <button className="add-content__btn" type="button" data-key={itemGuitar.articul} onClick={onClickAddToBasket}>Добавить в корзину</button>
+              <div className="add-content__info-date">
+                <p className="add-content__info-name">{itemProduct.name}</p>
+                <p className="add-content__info-article">Артикул: {itemProduct.articul} </p>
+                <p className="add-content__info-price">Цена: {renderPrice(itemProduct.price)} ₽</p>
+              </div>
+              <button className="add-content__btn" type="button" data-key={itemProduct.articul} onClick={onClickAddToBasket}>Добавить в корзину</button>
             </div>
           </>
         );

@@ -29,6 +29,10 @@
     width: 740px;
     box-shadow: 0px 5px 6px rgba(63, 63, 63, 0.2);
     border-radius: 4px;
+
+    @media (max-width: 680px) {
+        width: 300px;
+    }
 }
 
 .modal__close {

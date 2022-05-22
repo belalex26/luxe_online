@@ -2,13 +2,13 @@ import React, {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import ReactPaginate from "react-paginate";
 
-import {selectGuitars} from "../../store/giutarsSlise";
+import {selectProducts} from "../../store/productsSlise";
 import {selectPagination} from "../../store/paginationSlise";
 import {selectPage} from "../../store/paginationSlise";
 import {selectFilter, selectSort} from "../../store/filterSlise";
 
 
-import {renderGuitarsSortByPriceUp, renderGuitarsSortByPriceDown, renderGuitarsSortByReviewsUp, renderGuitarsSortByReviewsDown, filterByPrice} from "../../utils";
+import {renderProductSortByPriceUp, renderProductSortByPriceDown, renderProductSortByReviewsUp, renderProductSortByReviewsDown, filterByPrice} from "../../utils";
 import {DIRECTION_DOWN, DIRECTION_UP, SORT_BY_REVIEW, SORT_BY_PRICE} from "../../utils";
 import CatalogItem from "../catalog-item/catalog-item";
 import Modal from "../modal/modal";
@@ -19,35 +19,35 @@ function Catalog() {
   const [modalActive, setModalActive] = useState(false);
   const [successModal, setSuccessModal] = useState(false);
 
-  const GUITARS_PER_PAGE = 9;
+  const PRODUCTS_PER_PAGE = 9;
   let pageCount = 1;
 
-  const guitars = useSelector(selectGuitars);
+  const products = useSelector(selectProducts);
   const pageNumber = useSelector(selectPagination);
   const filter = useSelector(selectFilter);
   const sort = useSelector(selectSort);
   const dispatch = useDispatch();
 
-  let cloneGuitars = JSON.parse(JSON.stringify(guitars));
+  let cloneProducts = JSON.parse(JSON.stringify(products));
 
   useEffect(() => {
-    onSortingGuitars();
+    onSortingProducts();
   }, [sort]);
 
   useEffect(() => {
-    renderGuitars();
-  }, [cloneGuitars]);
+    renderProducts();
+  }, [cloneProducts]);
 
   useEffect(() => {
     setSuccessModal(false);
   }, [modalActive]);
 
   const renderPageCount = () => {
-    pageCount = Math.ceil(cloneGuitars.length / GUITARS_PER_PAGE);
+    pageCount = Math.ceil(cloneProducts.length / PRODUCTS_PER_PAGE);
     return pageCount;
   };
 
-  const pagesVisites = pageNumber * GUITARS_PER_PAGE;
+  const pagesVisites = pageNumber * PRODUCTS_PER_PAGE;
 
   const onPageChangeClick = ({selected}) => {
     dispatch(selectPage(selected));
@@ -78,88 +78,88 @@ function Catalog() {
   const onFilterByCheckbox = () => {
 
     if (type.length > 0) {
-      return (cloneGuitars = filterChechbox(cloneGuitars, filterType));
+      return (cloneProducts = filterChechbox(cloneProducts, filterType));
     }
 
     if (strings.length > 0) {
-      return (cloneGuitars = filterChechbox(cloneGuitars, filterStrings));
+      return (cloneProducts = filterChechbox(cloneProducts, filterStrings));
     }
-    return cloneGuitars;
+    return cloneProducts;
   };
 
 
   const onFilters = () => {
     if (Object.keys(filter).length !== 0) {
       if (type.length === 0 && strings.length === 0) {
-        return cloneGuitars;
+        return cloneProducts;
       }
 
       onFilterByCheckbox();
       // по цене
 
-      cloneGuitars = filterByPrice(cloneGuitars, filter.tempMin, filter.tempMax);
+      cloneProducts = filterByPrice(cloneProducts, filter.tempMin, filter.tempMax);
     }
-    return cloneGuitars;
+    return cloneProducts;
   };
 
 
-  const onSortingGuitars = () => {
+  const onSortingProducts = () => {
 
     if (sort.type === SORT_BY_PRICE && sort.direction === DIRECTION_UP) {
-      renderGuitarsSortByPriceUp(cloneGuitars);
+      renderProductSortByPriceUp(cloneProducts);
     }
 
     // цена по убыванию
 
     if (sort.type === SORT_BY_PRICE && sort.direction === DIRECTION_DOWN) {
-      renderGuitarsSortByPriceDown(cloneGuitars);
+      renderProductSortByPriceDown(cloneProducts);
     }
 
     // рейтинг по возрастанию
 
     if (sort.type === SORT_BY_REVIEW && sort.direction === DIRECTION_UP) {
-      renderGuitarsSortByReviewsUp(cloneGuitars);
+      renderProductSortByReviewsUp(cloneProducts);
     }
     // рейтинг по убыванию
 
     if (sort.type === SORT_BY_REVIEW && sort.direction === DIRECTION_DOWN) {
-      renderGuitarsSortByReviewsDown(cloneGuitars);
+      renderProductSortByReviewsDown(cloneProducts);
     }
 
     if (sort.type === SORT_BY_PRICE) {
-      renderGuitarsSortByPriceUp(cloneGuitars);
+      renderProductSortByPriceUp(cloneProducts);
     }
     if (sort.type === SORT_BY_REVIEW) {
-      renderGuitarsSortByReviewsDown(cloneGuitars);
+      renderProductSortByReviewsDown(cloneProducts);
     }
 
     if (sort.direction === DIRECTION_UP) {
-      renderGuitarsSortByPriceUp(cloneGuitars);
+      renderProductSortByPriceUp(cloneProducts);
     }
     if (sort.direction === DIRECTION_DOWN) {
-      renderGuitarsSortByPriceDown(cloneGuitars);
+      renderProductSortByPriceDown(cloneProducts);
     }
   };
 
   // отрисовка основного массива
 
-  const renderGuitars = () => {
+  const renderProducts = () => {
     onFilters();
-    onSortingGuitars();
+    onSortingProducts();
     renderPageCount();
 
-    if (cloneGuitars.length === 0) {
-      cloneGuitars = guitars;
+    if (cloneProducts.length === 0) {
+      cloneProducts = products;
     }
 
-    return (cloneGuitars.slice(pagesVisites, pagesVisites + GUITARS_PER_PAGE)
+    return (cloneProducts.slice(pagesVisites, pagesVisites + PRODUCTS_PER_PAGE)
       .map((item) => <CatalogItem key={item.articul}
         item={item}
         onModalActive={setModalActive}
       />));
   };
 
-  let guitarPage = renderGuitars();
+  let ProductPage = renderProducts();
 
   return (
     <>
@@ -169,7 +169,7 @@ function Catalog() {
           <SortPanel/>
         </div>
         <ul className="catalog__list">
-          {guitarPage}
+          {ProductPage}
         </ul>
         <ReactPaginate
           previousLabel={`Назад`}

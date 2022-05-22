@@ -11,6 +11,15 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: auto auto auto auto;
+
+    @media (max-width: 1020px) {
+        width: 84%;
+    }
+
+    @media (max-width: 680px) {
+        width: 92%;
+        grid-template-columns: 100%;
+    }
 }
 
 .basket__title {
@@ -115,6 +124,10 @@
     position: relative;
     margin-left: -27px;
     margin-right: 33px;
+
+    @media (max-width: 960px) {
+        margin-left: 0;
+    }
 }
 
 .basket__promo-input {
@@ -158,6 +171,10 @@
 
     &:active {
         background-color: $input-color-base;
+    }
+
+    @media (max-width: 960px) {
+        margin-top: 15px;
     }
 }
 
@@ -206,6 +223,14 @@
     opacity: 0;
     color: $basket-index-color;
     font-size: 12px;
+
+    @media (max-width: 960px) {
+        top: 24px;
+    }
+
+    @media (max-width: 680px) {
+        top: 30px;
+    }
 }
 
 .basket__promo-check {

@@ -17,12 +17,12 @@ export const DIRECTION_DOWN = `down`;
 
 
 export const renderTypeText = (type) => {
-  if (type === `electroType`) {
-    return (`Электрогитара`);
-  } else if (type === `acousticType`) {
-    return (`Акустическая гитара`);
+  if (type === `dressType`) {
+    return (`Платья`);
+  } else if (type === `suitType`) {
+    return (`Костюмы`);
   }
-  return (`Укулеле`);
+  return (`Блузки`);
 };
 
 export const renderPrice = (el) => {
@@ -41,13 +41,13 @@ export const filterByPrice = (arr, a, b) => {
 
 // сортировка по цене
 
-export const renderGuitarsSortByPriceUp = (arr) => {
+export const renderProductSortByPriceUp = (arr) => {
   arr.sort((a, b) => a.price > b.price ? 1 : -1);
   return (arr);
 };
 
 // по убыванию
-export const renderGuitarsSortByPriceDown = (arr) => {
+export const renderProductSortByPriceDown = (arr) => {
   arr.sort((a, b) => a.price <= b.price ? 1 : -1);
   return (arr);
 };
@@ -55,14 +55,14 @@ export const renderGuitarsSortByPriceDown = (arr) => {
 // рейтинг
 // по возрастанию
 
-export const renderGuitarsSortByReviewsUp = (arr) => {
+export const renderProductSortByReviewsUp = (arr) => {
   arr.sort((a, b) => a.reviews > b.reviews ? 1 : -1);
   return (arr);
 };
 
 // по убыванию
 
-export const renderGuitarsSortByReviewsDown = (arr) => {
+export const renderProductSortByReviewsDown = (arr) => {
   arr.sort((a, b) => a.reviews < b.reviews ? 1 : -1);
   return (arr);
 };

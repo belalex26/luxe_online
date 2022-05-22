@@ -3,12 +3,14 @@
     align-items: center;
     margin-top: 19px;
 
-    @media (max-width: 650px) {
-        margin-left: 15%;
+    @media (max-width: 680px) {
+        margin-left: 5%;
+        width: 90%;
     }
 
-    @media (max-width: 385px) {
-        margin-left: 3%;
+    @media (max-width: 460px) {
+        margin-left: 2%;
+        width: 77%;
     }
 }
 

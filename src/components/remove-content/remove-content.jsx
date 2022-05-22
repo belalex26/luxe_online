@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 import {renderPrice} from "../../utils";
 import {selectObject} from "../../store/objectSlise";
-import {selectGuitars} from "../../store/giutarsSlise";
+import {selectProducts} from "../../store/productsSlise";
 import {deleteToCard, selectCard} from "../../store/cardSlise";
 
 const RemoveContent = ({...props}) => {
   const {onModalActive} = props;
-  const guitarId = useSelector(selectObject);
-  const guitars = useSelector(selectGuitars);
+  const productId = useSelector(selectObject);
+  const products = useSelector(selectProducts);
   const cart = useSelector(selectCard);
   let temp = {
     ...cart
@@ -18,28 +18,30 @@ const RemoveContent = ({...props}) => {
 
   const dispatch = useDispatch();
 
-  let itemGuitar = guitars.find((index) => index.articul === guitarId.id);
+  let itemProduct = products.find((index) => index.articul === productId.id);
 
   useEffect(() => {
     renderAddContent();
-  }, [itemGuitar]);
+  }, [itemProduct]);
 
   const onRemoveItemClick = () => {
-    delete temp[itemGuitar.articul];
+    delete temp[itemProduct.articul];
     dispatch(deleteToCard(temp));
     onModalActive(false);
   };
 
   // eslint-disable-next-line consistent-return
   const renderAddContent = () => {
-    if (itemGuitar !== undefined) {
+    if (itemProduct !== undefined) {
       return (
         <>
-          <img className="remove-content__img" src={itemGuitar.image} alt="фото товара" />
+          <div className="remove-content__img">
+            <img className="remove-content__img-img" src={itemProduct.image} alt="фото товара" />
+          </div>
           <div className="remove-content__info-date">
-            <p className="remove-content__info-name">{itemGuitar.name}</p>
-            <p className="remove-content__info-article">Артикул: {itemGuitar.articul}</p>
-            <p className="remove-content__info-price">Цена: {renderPrice(itemGuitar.price)} ₽</p>
+            <p className="remove-content__info-name">{itemProduct.name}</p>
+            <p className="remove-content__info-article">Артикул: {itemProduct.articul}</p>
+            <p className="remove-content__info-price">Цена: {renderPrice(itemProduct.price)} ₽</p>
           </div>
         </>
       );

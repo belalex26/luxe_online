@@ -57,12 +57,14 @@ function BasketItem({...props}) {
   return (
     <>
       <li className="basket__item">
-        <img className="basket__item-img" src={basketItem[`image`]} alt="фото товара" width="48" height="124"></img>
+        <div className="basket__item-img">
+          <img className="basket__item-img-img" src={basketItem[`image`]} alt="фото товара" width="48" height="124"></img>
+        </div>
         <div className="basket__item-info">
           <h3 className="basket__item-title">{basketItem[`name`]}</h3>
           <p className="basket__item-article-number">Артикул: {basketItem[`articul`]} </p>
         </div>
-        <p className="basket__item-guitar-price">{renderPrice(basketItem[`price`])} ₽</p>
+        <p className="basket__item-product-price">{renderPrice(basketItem[`price`])} ₽</p>
         <div className="basket__item-btns">
           <button className="basket__item-btn basket__item-btn--prev" onClick={onPrevButtonClick} type="button"></button>
           <input className="basket__item-count" type="number" value={countItem} onChange={(evt) => setCountItem(evt.target.value)}/>

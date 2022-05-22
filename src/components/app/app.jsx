@@ -6,7 +6,7 @@ import Basket from "../basket/basket";
 import NotPage from "../not-page/not-page";
 import About from "../about/about";
 import Home from "../home/home";
-// import Product from "../product/product";
+import Product from "../product/product";
 import Success from "../success/success";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Route exact path="/about" component={About}/>
         <Route exact path="/home" component={Home}/>
         <Route exact path="/success" component={Success}/>
+        <Route exact path="/product" component={Product}/>
 
         <Route component={NotPage} />
       </Switch>

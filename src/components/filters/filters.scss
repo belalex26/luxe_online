@@ -1,6 +1,12 @@
 .filters {
     padding-left: 14.5%;
     padding-top: 36px;
+
+    @media (max-width: 480px) {
+        padding-left: 2%;
+        width: 96%;
+        margin: 0 auto;
+    }
 }
 
 .filters__title {

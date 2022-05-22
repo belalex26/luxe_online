@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo1.png";
 
 function Logo() {
   return (
-    <img src={logo} alt="luxe" width={120} height={80} />
+    <img src={logo} alt="luxe" width={60} height={60} />
   );
 }
 

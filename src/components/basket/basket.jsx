@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 
-import {selectGuitars} from "../../store/giutarsSlise";
+import {selectProducts} from "../../store/productsSlise";
 import {selectCard} from "../../store/cardSlise";
 
 import {HIT_SALE, SUPER_SALE, SUPER2022_SALE, SUPER2022_SALE_MAX, MAX_SALE, renderPrice} from "../../utils";
@@ -24,20 +24,20 @@ function Basket() {
   const [errorPromoCode, setErrorPromoCode] = useState(false);
 
   const [removeModal, setRemoveModal] = useState(false);
-  const guitars = useSelector(selectGuitars);
+  const products = useSelector(selectProducts);
   const cart = useSelector(selectCard);
   const cards = Object.keys(cart);
   const counts = Object.values(cart);
   const INIT_PRICE = 0;
 
-  let guitarObg = guitars.reduce((acc, itemGuitar) => {
-    acc[itemGuitar[`articul`]] = itemGuitar;
+  let productObg = products.reduce((acc, itemProduct) => {
+    acc[itemProduct[`articul`]] = itemProduct;
     return acc;
   }, {});
 
   // расчет итоговой цены
 
-  let result = guitars.filter((item) => cards.some((art) => item.articul.includes(art)));
+  let result = products.filter((item) => cards.some((art) => item.articul.includes(art)));
 
   function multiply(a, b) {
     let c = [];
@@ -137,8 +137,8 @@ function Basket() {
               ?
               <p className="basket__list-text">Пока пусто</p>
               :
-              Object.keys(cart).map((item) => <BasketItem key={item + guitarObg[item][`articule`]}
-                basketItem={guitarObg[item]}
+              Object.keys(cart).map((item) => <BasketItem key={item + productObg[item][`articule`]}
+                basketItem={productObg[item]}
                 count={cart[item]}
                 onRemoveModal={setRemoveModal}
                 totaPriceItem={totaPriceItem}

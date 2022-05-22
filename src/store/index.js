@@ -4,7 +4,7 @@ import storage from "redux-persist/lib/storage";
 import {persistReducer} from "redux-persist";
 import thunk from "redux-thunk";
 
-import guitarsSlise from "./giutarsSlise";
+import productsSlise from "./productsSlise";
 import objectSlise from "./objectSlise";
 import paginationSlise from "./paginationSlise";
 import filtersSlise from "./filterSlise";
@@ -12,7 +12,7 @@ import filtersSlise from "./filterSlise";
 import cardSlise from "./cardSlise";
 
 const reducers = combineReducers({
-  guitars: guitarsSlise,
+  products: productsSlise,
   card: cardSlise,
   object: objectSlise,
   pagination: paginationSlise,
